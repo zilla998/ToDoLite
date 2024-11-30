@@ -1,0 +1,11 @@
+<form method="post">
+    {% csrf_token %}
+    
+        <td><a href="{% url 'tasks' %}">Go back</a></td>
+    
+        <td><p>Delete task?: "{{ task }}"</p></td>
+    <tr>
+        <td><input type="submit" value="Delete"></td>
+    </tr>
+    
+</form>
