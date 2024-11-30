@@ -6,7 +6,6 @@ from django.views.generic import ListView, CreateView, DetailView, UpdateView, D
 
 from .models import Task
 
-
 class TaskView(ListView):
     model = Task
     template_name = 'todo/tasks.html'

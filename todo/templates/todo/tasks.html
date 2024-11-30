@@ -1,20 +1,22 @@
+{% extends 'base.html' %}
 
+{% block content %}
+<a href="{% url 'task-create' %}" class="btn btn-primary active float-end" style="width: 300px">Add task</a>
 
-<h3>ToDo Lite</h3>
-<a href="{% url 'task-create' %}">Add task</a>
-
-<table>
+<table class="table table-bordered">
     <tr>
-        <th>Item</th>
+        <th>My Tasks:</th>
     </tr>
         {% for task in tasks %}
     <tr>
         <td>{{ task.title }}</td>
-        <td><a href="{% url 'task-detail' task.pk %}">View</a></td>
-        <td><a href="{% url 'task-edit' task.pk %}">Edit</a></td>
-        <td><a href="{% url 'task-delete' task.pk %}">Delete</a></td>
+        <td><a href="{% url 'task-detail' task.pk %}" class="btn btn-primary">View</a></td>
+        <td><a href="{% url 'task-edit' task.pk %}" class="btn btn-primary">Edit</a></td>
+        <td><a href="{% url 'task-delete' task.pk %}" class="btn btn-primary">Delete</a></td>
     </tr>
             {% empty %}
             <h3>No items in list</h3>
     {% endfor %}
 </table>
+
+{% endblock %}

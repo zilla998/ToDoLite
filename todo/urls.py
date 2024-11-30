@@ -2,6 +2,7 @@ from django.contrib import admin
 from django.urls import path
 
 from .views import TaskView, TaskCreate, TaskDetail, TaskEdit, TaskDelete
+from . import views
 
 urlpatterns = [
     path('tasks/', TaskView.as_view(), name='tasks'),
