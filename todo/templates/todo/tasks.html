@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<a href="{% url 'task-create' %}" class="btn btn-primary active float-end" style="width: 300px">Add task</a>
+<a href="{% url 'task-create' %}" class="btn btn-primary float-end" style="width: 300px">Add task</a>
 
 <table class="table table-bordered">
     <tr>
@@ -10,9 +10,9 @@
         {% for task in tasks %}
     <tr>
         <td>{{ task.title }}</td>
-        <td><a href="{% url 'task-detail' task.pk %}" class="btn btn-primary">View</a></td>
-        <td><a href="{% url 'task-edit' task.pk %}" class="btn btn-primary">Edit</a></td>
-        <td><a href="{% url 'task-delete' task.pk %}" class="btn btn-primary">Delete</a></td>
+        <td><a href="{% url 'task' task.pk %}" class="btn btn-primary">View</a></td>
+        <td><a href="{% url 'task-edit' task.pk %}" class="btn btn-warning">Edit</a></td>
+        <td><a href="{% url 'task-delete' task.pk %}" class="btn btn-danger">Delete</a></td>
     </tr>
             {% empty %}
             <h3>No items in list</h3>

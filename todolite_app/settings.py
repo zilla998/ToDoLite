@@ -26,6 +26,7 @@ SECRET_KEY = 'django-insecure-k*t!4do&2=w&0($4e(*10fzsrisgqjl3^wreo#^5%8+*#!8m(g
 DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+INTERNAL_IPS = ['127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -37,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'users.apps.UsersConfig',
     'todo.apps.TodoConfig',
 ]
 
@@ -106,13 +108,19 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ru-ru'
 
 TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
 USE_TZ = True
+
+
+LOGIN_REDIRECT_URL = 'tasks'
+LOGIN_URL = 'users:login'
+LOGOUT_REDIRECT_URL = 'users:login'
+
 
 
 # Static files (CSS, JavaScript, Images)
